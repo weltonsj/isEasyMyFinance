@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>is Easy My Finance</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <header>
+      <img src="./img/logo-icoutech.png" alt="icoutech" width="100px">
+      <h1>is Easy My Finance</h1>
+    </header>
+    <main>
+      <div class="container1">
+        <div class="display-titles">
+          <h2>Nova Transação</h2>
+        </div>
+        <div class="entry-container">
+          <label for="name">Nome:</label>
+          <input class="data-entry" id="name" maxlength="50" type="text" autofocus>
+        </div>
+
+        <div class="entry-container">
+          <label for="value">Valor:</label>
+          <input class="data-entry" id="value" type="number">
+        </div>
+        <button id="save">Salvar</button>
+      </div>
+
+      <div class="container2">
+        <div class="display-titles">
+          <h2>Saldo: <span id="total">0</span></h2>
+        </div>
+        <div class="display-titles">
+          <h2>Histórico de Transações</h2>
+        </div>
+        <div id="history-container">
+        </div>
+      </div>
+    </main>
+    <script type="module" src="./index.js"></script>
+  </body>
+  <footer>
+    <p>Icoutech Technology in Support ®™</p>
+  </footer>
+</html>

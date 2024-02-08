@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-texts: #fff;
+  --background-color-1: #1c1a1d;
+  --background-color-2: #39353b;
+  --save-btn: #6bf394;
+  --edit-btn: #7bb4ff;
+  --delete-btn: #f64348;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--background-color-1);
+  color: var(--color-texts);
+  gap: 40px;
+}
+
+header {
+  display: flex;
+  padding: 30px 30px 0px 50px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+img {
+  flex-basis: 280px;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  gap: 30px;
+  padding: 0 30px;
+}
+
+footer>p {
+  padding: 20px;
+  text-align: center;
+  font-size: 0.85em;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 20rem;
+}
+
+.entry-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.data-entry {
+  font-size: 1.3em;
+  border-radius: 5px;
+  height: 50px;
+  background-color: var(--background-color-2);
+  color: var(--color-texts);
+  border: none;
+  padding: 0 20px;
+}
+
+.data-entry::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.data-entry:-webkit-autofill {
+  box-shadow: 0 0 0 30px var(--background-color-2) inset;
+}
+
+.data-entry:-webkit-autofill {
+  -webkit-text-fill-color: var(--color-texts);
+  font-size: 1.3em;
+}
+
+.container2 {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#history-container {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 500px;
+  padding: 0px 10px;
+}
+
+.releases {
+  display: flex;
+  border-bottom: .5px solid #ffffff5b;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+span {
+  flex: 3;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.btn-edit, .btn-delete {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.display-titles {
+  font-size: 1em;
+  padding: 20px;
+  background-color: var(--background-color-2);
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+button {
+  font-size: 1.3em;
+  font-weight: 600;
+  border-radius: 5px;
+  border: none;
+  height: 50px;
+  background-color: var(--save-btn);
+}
+
+.btn-edit {
+  background-color: var(--edit-btn);
+}
+
+.btn-delete {
+  background-color: var(--delete-btn);
+}
+
+button:active, .btn-edit:active, .btn-delete:active {
+  transition: 0.01ms ease-in;
+  background-color: #429c5d;
+}
+
+.btn-edit:active {
+  transition: 0.01ms ease-in;
+  background-color: #2e87fb;
+}
+
+.btn-delete:active {
+  transition: 0.01ms ease-in;
+  background-color: #d61017;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+
+  img {
+    flex-basis: auto;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  span {
+    font-size: .9em;
+  }
+
+  .btn-edit, .btn-delete {
+    height: 40px;
+    font-size: .9em;
+  }
+}
