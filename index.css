@@ -160,7 +160,7 @@ button:active, .btn-edit:active, .btn-delete:active {
   header {
     flex-direction: column;
   }
-
+  
   img {
     flex-basis: auto;
   }
@@ -171,6 +171,10 @@ button:active, .btn-edit:active, .btn-delete:active {
 
   span {
     font-size: .9em;
+  }
+
+  .releases {
+    flex-direction: column;
   }
 
   .btn-edit, .btn-delete {

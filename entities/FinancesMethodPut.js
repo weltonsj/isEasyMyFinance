@@ -1,4 +1,4 @@
-import { postFinancesData, reloadPage } from "./CreateElementsMethod.js";
+import { postFinancesData } from "./CreateElementsMethod.js";
 
 function putFinance(funcGetFinances, funcResponsePUT) {
   document.addEventListener("click", btn => {
@@ -11,14 +11,14 @@ function putFinance(funcGetFinances, funcResponsePUT) {
       return inputsData.value.includes("-") ? inputsData.situation = "saida" : inputsData.situation = "entrada";
     };
 
-    if (btn.target.classList.value === "btn-edit") {
+    if (btn.target.classList.value.includes("btn-edit")) {
       if (inputsData.name === "" && inputsData.value === "") {
         alert("Pelo menos um dos campos não pode estar vazio.")
       };
       if (inputsData.name !== "" || inputsData.value !== "") {
         funcGetFinances().then(element => {
           element.forEach(finance => {
-            if (parseFloat(btn.target.id) === finance.id) {
+            if (btn.target.classList.value.includes(finance.id)) {
               if (inputsData.name === "") {
                 inputsData.name = finance.name;
                 situation();
@@ -26,7 +26,7 @@ function putFinance(funcGetFinances, funcResponsePUT) {
                 \nValor: R$ ${finance.value}
                 \npara >
                 \nValor: R$ ${inputsData.value}`);
-                confirmValue ? funcResponsePUT(btn.target.id, inputsData) : ""
+                confirmValue ? funcResponsePUT(finance.id, inputsData) : ""
 
               } else if (inputsData.value === "") {
                 inputsData.value = finance.value;
@@ -35,7 +35,7 @@ function putFinance(funcGetFinances, funcResponsePUT) {
                 \nNome: ${finance.name}
                 \npara >
                 \nNome: ${inputsData.name}`);
-                confirmName ? funcResponsePUT(btn.target.id, inputsData) : ""
+                confirmName ? funcResponsePUT(finance.id, inputsData) : ""
 
               } else {
                 situation();
@@ -43,9 +43,8 @@ function putFinance(funcGetFinances, funcResponsePUT) {
                 \nNome: ${finance.name}\nValor: ${finance.value}
                 \npara >
                 \nNome: ${inputsData.name}\nValor: ${inputsData.value}`);
-                confirmData ? funcResponsePUT(btn.target.id, inputsData) : ""
+                confirmData ? funcResponsePUT(finance.id, inputsData) : ""
               };
-              reloadPage();
             };
           });
         })

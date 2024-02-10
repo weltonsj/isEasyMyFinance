@@ -9,5 +9,5 @@ import { renderTotal } from "./entities/RenderMethodTotal.js";
 renderFinaces(getFinances, creatFinance);
 renderTotal(getFinances, createTotal);
 postFinance(getFinances, responsePOST);
-deleteFinance(responseDELETE);
 putFinance(getFinances, responsePUT);
+deleteFinance(getFinances, responseDELETE);

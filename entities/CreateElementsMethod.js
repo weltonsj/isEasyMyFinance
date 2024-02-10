@@ -1,6 +1,6 @@
 function creatFinance(finance) {
   const release = document.createElement("div");
-  release.id = finance.id;
+  // release.id = finance.id;
   release.classList.add("releases");
 
   const nameSpan = document.createElement("span");
@@ -19,12 +19,14 @@ function creatFinance(finance) {
   };
 
   const btnEdit = document.createElement("button");
-  btnEdit.id = finance.id
+  // btnEdit.id = finance.id
+  btnEdit.classList.add(finance.id);
   btnEdit.classList.add("btn-edit");
   btnEdit.innerText = "Editar";
 
   const btnDelete = document.createElement("button");
-  btnDelete.id = finance.id
+  // btnDelete.id = finance.id
+  btnDelete.classList.add(finance.id);
   btnDelete.classList.add("btn-delete");
   btnDelete.innerText = "Excluir";
 

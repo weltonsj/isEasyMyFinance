@@ -1,4 +1,4 @@
-import { cleanInputs, inputFocu, postFinancesData, reloadPage } from "./CreateElementsMethod.js";
+import { cleanInputs, inputFocu, postFinancesData } from "./CreateElementsMethod.js";
 
 function postFinance(funcGetFinances, funcResponsePOST) {
   postFinancesData().saveBtn.addEventListener("click", () => {
@@ -18,7 +18,6 @@ function postFinance(funcGetFinances, funcResponsePOST) {
           alert(`O nome ${inputsData.name} já está em uso.`)
         } else {
           funcResponsePOST(inputsData);
-          reloadPage();
         }
       });
     } else {
