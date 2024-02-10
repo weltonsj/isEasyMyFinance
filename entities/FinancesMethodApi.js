@@ -1,12 +1,12 @@
 /* API GET */
 async function getFinances() {
-  const finances = await fetch("http://localhost:3000/finances");
+  const finances = await fetch("https://api-json-server-finances.vercel.app/finances");
   return finances.json();
 };
 
 /* API POST */
 async function responsePOST(objectInput) {
-  await (await fetch("http://localhost:3000/finances", {
+  await (await fetch("https://api-json-server-finances.vercel.app/finances", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -17,7 +17,7 @@ async function responsePOST(objectInput) {
 
 /* API PUT */
 async function responsePUT(objectId, objectInput) {
-  await (await fetch(`http://localhost:3000/finances/${objectId}`, {
+  await (await fetch(`https://api-json-server-finances.vercel.app/finances/${objectId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"
@@ -28,7 +28,7 @@ async function responsePUT(objectId, objectInput) {
 
 /* API DELETE */
 async function responseDELETE(objectId) {
-  await (await fetch(`http://localhost:3000/finances/${objectId}`, {
+  await (await fetch(`https://api-json-server-finances.vercel.app/finances/${objectId}`, {
     method: "DELETE"
   })).json()
 };
