@@ -123,9 +123,11 @@ span {
   border-radius: 10px;
   margin-bottom: 30px;
 }
+
 .groupbtn {
   display: flex;
   gap: 20px;
+  flex: 1;
 }
 
 button {
