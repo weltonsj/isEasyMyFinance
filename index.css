@@ -176,15 +176,22 @@ button:active, .btn-edit:active, .btn-delete:active {
   }
 
   span {
-    font-size: .9em;
+    font-size: 1em;
   }
 
   .releases {
     flex-direction: column;
   }
 
+  .groupbtn {
+    flex-direction: column;
+    width: 200px;
+    gap: 0;
+  }
+
   .btn-edit, .btn-delete {
     height: 40px;
-    font-size: .9em;
+    font-size: 1.2em;
+    flex: 1;
   }
 }
