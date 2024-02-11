@@ -123,6 +123,10 @@ span {
   border-radius: 10px;
   margin-bottom: 30px;
 }
+.groupbtn {
+  display: flex;
+  gap: 20px;
+}
 
 button {
   font-size: 1.3em;
