@@ -1,7 +1,9 @@
 function creatFinance(finance) {
   const release = document.createElement("div");
+  const groupBtn = document.createElement("div")
   // release.id = finance.id;
   release.classList.add("releases");
+  groupBtn.classList.add("groupbtn");
 
   const nameSpan = document.createElement("span");
   nameSpan.textContent = finance.name;
@@ -30,7 +32,8 @@ function creatFinance(finance) {
   btnDelete.classList.add("btn-delete");
   btnDelete.innerText = "Excluir";
 
-  release.append(nameSpan, valueSpan, typeSpan, btnEdit, btnDelete);
+  groupBtn.append(btnEdit, btnDelete)
+  release.append(nameSpan, valueSpan, typeSpan, groupBtn);
 
   const historyContainer = document.getElementById("history-container");
   historyContainer.append(release);
