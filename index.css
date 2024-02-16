@@ -48,6 +48,10 @@ footer>p {
   font-size: 0.85em;
 }
 
+::placeholder {
+  font-style: italic;
+}
+
 .container1 {
   display: flex;
   flex-direction: column;
@@ -124,7 +128,13 @@ span {
   margin-bottom: 30px;
 }
 
-.groupbtn {
+.spangroup {
+  display: flex;
+  gap: 20%;
+  flex: 6;
+}
+
+.btngroup {
   display: flex;
   gap: 20px;
   flex: 1;
@@ -162,6 +172,12 @@ button:active, .btn-edit:active, .btn-delete:active {
   background-color: #d61017;
 }
 
+@media (max-width: 1000px) {
+  .spangroup {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 600px) {
   header {
     flex-direction: column;
@@ -173,25 +189,47 @@ button:active, .btn-edit:active, .btn-delete:active {
 
   main {
     flex-direction: column;
+    /* padding: 20px; */
   }
 
   span {
-    font-size: 1em;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    width: 240px;
   }
 
-  .releases {
+  .container2 {
+    display: flex;
+  }
+
+  #history-container {
+    position: relative;
+    flex: 2;
+    padding: 0;
+  }
+
+  .spangroup {
+    /* position: relative;
+    left: -50px; */
+    display: flex;
     flex-direction: column;
   }
 
-  .groupbtn {
+  .spangroup > span:nth-child(1) {
+    font-size: 1.3em;
+    font-weight: 700;
+  }
+
+  .btngroup {
+    /* position: relative;
+    left: -50px; */
     flex-direction: column;
-    width: 200px;
-    gap: 0;
+    width: 240px;
+    gap: 1px;
   }
 
   .btn-edit, .btn-delete {
     height: 40px;
     font-size: 1.2em;
-    flex: 1;
   }
 }

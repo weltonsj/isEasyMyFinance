@@ -1,9 +1,11 @@
 function creatFinance(finance) {
   const release = document.createElement("div");
-  const groupBtn = document.createElement("div")
+  const spanGroup = document.createElement("div");
+  const btnGroup = document.createElement("div");
   // release.id = finance.id;
   release.classList.add("releases");
-  groupBtn.classList.add("groupbtn");
+  spanGroup.classList.add("spangroup")
+  btnGroup.classList.add("btngroup");
 
   const nameSpan = document.createElement("span");
   nameSpan.textContent = finance.name;
@@ -32,8 +34,9 @@ function creatFinance(finance) {
   btnDelete.classList.add("btn-delete");
   btnDelete.innerText = "Excluir";
 
-  groupBtn.append(btnEdit, btnDelete)
-  release.append(nameSpan, valueSpan, typeSpan, groupBtn);
+  spanGroup.append(nameSpan, valueSpan, typeSpan);
+  btnGroup.append(btnEdit, btnDelete);
+  release.append(spanGroup, btnGroup);
 
   const historyContainer = document.getElementById("history-container");
   historyContainer.append(release);
@@ -58,7 +61,9 @@ function inputFocu(input) {
 };
 
 function reloadPage() {
-  return window.location.reload(true);
+  setTimeout(() => {
+    return window.location.reload(true);
+  }, 2 * 1000);
 };
 
 function cleanInputs() {

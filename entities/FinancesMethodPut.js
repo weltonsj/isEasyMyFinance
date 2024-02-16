@@ -1,4 +1,4 @@
-import { postFinancesData } from "./CreateElementsMethod.js";
+import { cleanInputs, inputFocu, postFinancesData, reloadPage } from "./CreateElementsMethod.js";
 
 function putFinance(funcGetFinances, funcResponsePUT) {
   document.addEventListener("click", btn => {
@@ -13,7 +13,7 @@ function putFinance(funcGetFinances, funcResponsePUT) {
 
     if (btn.target.classList.value.includes("btn-edit")) {
       if (inputsData.name === "" && inputsData.value === "") {
-        alert("Pelo menos um dos campos não pode estar vazio.")
+        alert("Pelo menos um dos campos precisa estar preenchido.")
       };
       if (inputsData.name !== "" || inputsData.value !== "") {
         funcGetFinances().then(element => {
@@ -26,7 +26,8 @@ function putFinance(funcGetFinances, funcResponsePUT) {
                 \nValor: R$ ${finance.value}
                 \npara >
                 \nValor: R$ ${inputsData.value}`);
-                confirmValue ? funcResponsePUT(finance.id, inputsData) : ""
+                confirmValue ? funcResponsePUT(finance.id, inputsData) : "";
+                reloadPage();
 
               } else if (inputsData.value === "") {
                 inputsData.value = finance.value;
@@ -35,7 +36,8 @@ function putFinance(funcGetFinances, funcResponsePUT) {
                 \nNome: ${finance.name}
                 \npara >
                 \nNome: ${inputsData.name}`);
-                confirmName ? funcResponsePUT(finance.id, inputsData) : ""
+                confirmName ? funcResponsePUT(finance.id, inputsData) : "";
+                reloadPage();
 
               } else {
                 situation();
@@ -43,8 +45,11 @@ function putFinance(funcGetFinances, funcResponsePUT) {
                 \nNome: ${finance.name}\nValor: ${finance.value}
                 \npara >
                 \nNome: ${inputsData.name}\nValor: ${inputsData.value}`);
-                confirmData ? funcResponsePUT(finance.id, inputsData) : ""
+                confirmData ? funcResponsePUT(finance.id, inputsData) : "";
+                reloadPage();
               };
+              cleanInputs();
+              inputFocu(postFinancesData().inpuName);
             };
           });
         })

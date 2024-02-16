@@ -1,3 +1,5 @@
+import { cleanInputs, reloadPage } from "./CreateElementsMethod.js";
+
 function deleteFinance(funcGetFinance, funcResponseDelete) {
   document.addEventListener("click", btn => {
     if (btn.target.classList.value.includes("btn-delete")) {
@@ -7,7 +9,9 @@ function deleteFinance(funcGetFinance, funcResponseDelete) {
             const confirmDelete = confirm(`Tem certeza que deseja excluir os dados a seguir?
             \nNome: R$ ${finance.name}\nValor: R$ ${finance.value}`);
             confirmDelete ? funcResponseDelete(finance.id) : "";
+            reloadPage();
           };
+          cleanInputs();
         });
       });
     };
