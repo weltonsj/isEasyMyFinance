@@ -1,13 +1,5 @@
-import { creatFinance, createTotal } from "./entities/CreateElementsMethod.js";
-import { getFinances, responseDELETE, responsePOST, responsePUT } from "./entities/FinancesMethodApi.js";
-import { deleteFinance } from "./entities/FinancesMethodDelete.js";
-import { postFinance } from "./entities/FinancesMethodPost.js";
-import { putFinance } from "./entities/FinancesMethodPut.js";
-import { renderFinaces } from "./entities/RenderMethodFinance.js"
-import { renderTotal } from "./entities/RenderMethodTotal.js";
+import { saveIpuntTransaction } from "./entities/MethodSaveTransaction.js";
+import { executeRenderToTransactions } from "./entities/TransactionsViewerRender.js";
 
-renderFinaces(getFinances, creatFinance);
-renderTotal(getFinances, createTotal);
-postFinance(getFinances, responsePOST);
-putFinance(getFinances, responsePUT);
-deleteFinance(getFinances, responseDELETE);
+document.addEventListener("DOMContentLoaded", executeRenderToTransactions);
+document.querySelector("form").addEventListener("submit", saveIpuntTransaction);

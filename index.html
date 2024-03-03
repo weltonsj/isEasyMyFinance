@@ -13,21 +13,25 @@
       <h1>is Easy My Finance</h1>
     </header>
     <main>
-      <div class="container1">
-        <div class="display-titles">
-          <h2>Nova Transação</h2>
+      <form>
+        <div class="container1">
+          <div class="display-titles">
+            <h2>Nova Transação</h2>
+            <input id="id" hidden></input>
+          </div>
+          <div class="entry-container">
+            <label for="name">Nome:</label>
+            <input class="data-entry" id="name" maxlength="50" type="text" placeholder="Digite" autofocus>
+            <span id="error-name" class="span-error"></span>
+          </div>
+          <div class="entry-container">
+            <label for="value">Valor:</label>
+            <input class="data-entry" id="value" type="text" placeholder="Ex: 1.00 ou -1.00">
+            <span id="error-value" class="span-error"></span>
+          </div>
+          <button id="save">Salvar</button>
         </div>
-        <div class="entry-container">
-          <label for="name">Nome:</label>
-          <input class="data-entry" id="name" maxlength="50" type="text" placeholder="Digite" autofocus>
-        </div>
-
-        <div class="entry-container">
-          <label for="value">Valor:</label>
-          <input class="data-entry" id="value" type="text" placeholder="Ex: 1.00 ou -1.00">
-        </div>
-        <button id="save">Salvar</button>
-      </div>
+      </form>
 
       <div class="container2">
         <div class="display-titles">
@@ -40,6 +44,7 @@
         </div>
       </div>
     </main>
+
     <script type="module" src="./index.js"></script>
   </body>
   <footer>
