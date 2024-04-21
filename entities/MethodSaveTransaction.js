@@ -10,12 +10,12 @@ async function saveIpuntTransaction(ev) {
   const amount = inputTransactionData().inputValue.value;
   const IDspan = inputTransactionData().transactionID.value;
   let situation;
-  
+
   if (name === "" && amount !== "") {
     classError("name", "on");
     spanError("error-name", "Campo Nome é obrigatótio.", "on");
   };
-  
+
   if (amount === "" && name !== "") {
     classError("value", "on");
     spanError("error-value", "Campo Valor é obrigatótio.", "on");
@@ -41,7 +41,7 @@ async function saveIpuntTransaction(ev) {
 
   const value = Number(amount);
   if (IDspan) {
-    updateTransaction(IDspan, {name, value, situation}).then(transaction => {
+    updateTransaction(IDspan, { name, value, situation }).then(transaction => {
       const transactionsIndex = transactions.findIndex(index => index.id === IDspan);
       const divTransaction = document.getElementById(IDspan);
       transactions.splice(transactionsIndex, 1, transaction);
@@ -52,7 +52,7 @@ async function saveIpuntTransaction(ev) {
     })
   } else {
     if (!changedTransactionList.includes(nameChange)) {
-      const transaction = saveTransaction({name, value, situation});
+      const transaction = saveTransaction({ name, value, situation });
       transaction.then(resp => {
         transactions.push(resp);
         renderTransaction(resp);
@@ -66,8 +66,21 @@ async function saveIpuntTransaction(ev) {
   };
 };
 
+async function cleanerInputs() {
+  const inputName = document.getElementById("name");
+  const inputValue = document.getElementById("value");
+  document.getElementById("save").addEventListener("click", () => {
+    setTimeout(() => {
+      inputName.value = "";
+      inputValue.value = "";
+      window.location.reload();
+    }, 2 * 1000);
+  });
+};
+
 checkedInputs();
 editTransaction();
 removeTransaction();
+cleanerInputs();
 
 export { saveIpuntTransaction };
