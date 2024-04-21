@@ -1,12 +1,12 @@
 const transactions = [];
 /* API GET */
 async function getTransactions() {
-  return await (await fetch("https://api-json-server-finances.vercel.app/transactions")).json();
+  return await (await fetch("https://api-json-server-finances-git-main-weltons-projects-8daecbe1.vercel.app/transactions")).json();
 };
 
 /* API POST */
 async function saveTransaction(objectInput) {
-  return await (await fetch("https://api-json-server-finances.vercel.app/transactions", {
+  return await (await fetch("https://api-json-server-finances-git-main-weltons-projects-8daecbe1.vercel.app/transactions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -17,7 +17,7 @@ async function saveTransaction(objectInput) {
 
 /* API PUT */
 async function updateTransaction(id, objectInput) {
-  return await (await fetch(`https://api-json-server-finances.vercel.app/transactions/${id}`, {
+  return await (await fetch(`https://api-json-server-finances-git-main-weltons-projects-8daecbe1.vercel.app/transactions/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"
@@ -28,7 +28,7 @@ async function updateTransaction(id, objectInput) {
 
 /* API DELETE */
 async function deleteTransaction(id) {
-  return await (await fetch(`https://api-json-server-finances.vercel.app/transactions/${id}`, {
+  return await (await fetch(`https://api-json-server-finances-git-main-weltons-projects-8daecbe1.vercel.app/transactions/${id}`, {
     method: "DELETE"
   })).json();
 };
